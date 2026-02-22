@@ -44,21 +44,19 @@ def has_long_run(positions: list[int], limit: int = 2) -> bool:
     return False
 
 def fmt(name: str, positions: list[int]) -> str:
-    
     matched = set(positions)
     out = []
     i = 0
-    
     while i < len(name):
-        
         if i in matched:
-            out.append(f"**{name[i].upper()}**")
-            
+            run = []
+            while i < len(name) and i in matched:
+                run.append(name[i].upper())
+                i += 1
+            out.append(f"**{''.join(run)}**")
         else:
             out.append(name[i].lower())
-            
-        i += 1
-        
+            i += 1
     return "".join(out)
 
 def _check(args: tuple) -> list:
