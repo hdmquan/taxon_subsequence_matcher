@@ -25,9 +25,9 @@ poetry run python3 find.py [sequence] [word_count] [flags]
 | `sequence` | `shadowshape` | Subsequence to search for |
 | `word_count` | any | Filter results to N-word names only |
 | `--direct` | off | Allow direct/substring-like matches (by default, runs of more than 2 consecutive matched letters are filtered out) |
-| `--no-format` | off | Disable match highlighting |
+| `--no-format` | off | Disable match highlighting (md format) |
 
-By default, results are formatted with matched letters **bolded and uppercased**, unmatched letters lowercased — e.g. `**P**ine**A**pp**L**e`.
+By default, results are formatted with matched letters **bolded** and UPPERCASED, unmatched letters lowercased — e.g. `**P**ine**A**pp**L**e`.
 
 ## Examples
 
@@ -35,11 +35,9 @@ By default, results are formatted with matched letters **bolded and uppercased**
 # default: shadowshape, any word count
 poetry run python3 find.py
 
-# 1-word names containing "raptor" subsequence (36 matches, direct runs filtered)
+# 1-word names containing "raptor" subsequence
 poetry run python3 find.py raptor 1
-# RAmisPinaTispORa  →  R·A·mis·P·ina·T·isp·O·R·a
-# CRasPedoTHORax   →  c·R·a·s·P·edo·T·h·O·R·ax
-# BRaDyPTerOscaRta →  b·R·a·d·y·P·T·er·O·sca·R·ta
+# RAmisPinaTispORa  >  R·A·mis·P·ina·T·isp·O·R·a
 
 # 2-word names, no formatting, allow direct matches
 poetry run python3 find.py shadow 2 --direct --no-format
