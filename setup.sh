@@ -4,7 +4,7 @@ set -e
 echo "Installing dependencies..."
 poetry install
 
-echo "Downloading GBIF backbone taxonomy (~926MB)..."
+echo "Downloading GBIF backbone taxonomy (~926MB so uh)..."
 curl -L "https://hosted-datasets.gbif.org/datasets/backbone/current/backbone.zip" -o backbone.zip
 
 echo "Extracting..."
@@ -21,4 +21,4 @@ print(f'Done: {df.shape[0]:,} rows')
 echo "Cleaning up..."
 rm -rf backbone/ backbone.zip
 
-echo "Ready. Run: poetry run python3 find.py <sequence> [word_count]"
+echo "Ready. See: README.md. Run: poetry run python3 find.py <sequence> [word_count]"
